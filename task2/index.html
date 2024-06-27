@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f23e;
+        }
+        nav {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 130px;
+            background-color: #e0e0e06b; 
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            transition: width 0.3s;
+            overflow-x: hidden; 
+        }
+        nav:hover {
+            width: 200px; 
+        }
+        nav h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        nav a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+            text-align: center;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #ddd;
+        }
+
+        body {
+            margin-left: 100px;
+            background-color: #f9f9f9; 
+            transition: margin-left 0.3s;
+        }
+
+        nav:hover + body {
+            margin-left: 220px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h2>Assignments</h2>
+        <a href="#bootstrap">Bootstrap</a>
+        <a href="#javascript">Javascript</a>
+    </nav>
+
+    <div style="margin-left: 120px;">
+        <h1><b>Mattapally yashwanth</b></h1>
+        <h2>VIT Chennai</h2>
+        <h2>Reg No : 21BCE5066</h2>
+        <h2>Slot : 11:30 am to 1:30 pm</h2>
+        <h2 id="bootstrap">Bootstrap Tasks</h2>
+        <table>
+            <tr>
+                <th>Task Name</th>
+                <th>Link</th>
+            </tr>
+            <tr>
+                <td>Task 1</td>
+                <td><a href="Bootstrap/task1.html" >Bootstrap Task 1</a></td>
+            </tr>
+            <tr>
+                <td>Task 2</td>
+                <td><a href="Bootstrap/task2.html">Bootstrap Task 2</a></td>
+            </tr>
+            <tr>
+                <td>Task 3</td>
+                <td><a href="Bootstrap/task3.html">Bootstrap Task 3</a></td>
+            </tr>
+            <tr>
+                <td>Task 4</td>
+                <td><a href="Bootstrap/task4.html">Bootstrap Task 4</a></td>
+            </tr>
+            <tr>
+                <td>Task 5</td>
+                <td><a href="Bootstrap/task5.html">Bootstrap Task 5</a></td>
+            </tr>
+            <tr>
+                <td>Task 6</td>
+                <td><a href="Bootstrap/task6.html">Bootstrap Task 6</a></td>
+            </tr>
+        </table>
+        <h2 id="javascript">Javascript Tasks</h2>
+        <table>
+            <tr>
+                <th>Task Name</th>
+                <th>Link</th>
+            </tr>
+            <tr>
+                <td>Task 1</td>
+                <td><a href="Javascript/task1.html" >Javascript Task 1</a></td>
+            </tr>
+            <tr>
+                <td>Task 2</td>
+                <td><a href="Javascript/task2.html">Javascript Task 2</a></td>
+            </tr>
+            <tr>
+                <td>Task 3</td>
+                <td><a href="Javascript/task3.html">Javascript Task 3</a></td>
+            </tr>
+            <tr>
+                <td>Task 4</td>
+                <td><a href="Javascript/task4.html">Javascript Task 4</a></td>
+            </tr>
+            <tr>
+                <td>Task 5</td>
+                <td><a href="Javascript/task5.html">Javascript Task 5</a></td>
+            </tr>
+            <tr>
+                <td>Task 6</td>
+                <td><a href="Javascript/task6.html">Javascript Task 6</a></td>
+            </tr>
+            <tr>
+                <td>Task 7</td>
+                <td><a href="Javascript/task7.html">Javascript Task 7</a></td>
+            </tr>
+            <tr>
+                <td>Task 8</td>
+                <td><a href="Javascript/task8.html">Javascript Task 8</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+

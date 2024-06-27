@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Form Validation</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style6.css"> 
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script> 
+</head>
+<body>
+    <div class="container mt-5">
+        <form id="needs-validation" novalidate>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="name" required>
+                    <div class="invalid-feedback">
+                        Name is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <div class="input-group">
+                    <input type="email" class="form-control" id="email" required>
+                    <div class="invalid-feedback">
+                        Email is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="input-group">
+                    <input type="password" class="form-control" id="password" required>
+                    <div class="invalid-feedback">
+                        Password is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="hobbies">Hobbies</label>
+                <select class="form-control" id="hobbies" required>
+                    <option value="" disabled selected>Select your hobby</option>
+                    <option>Reading</option>
+                    <option>Travelling</option>
+                    <option>Cooking</option>
+                    <option>Sports</option>
+                </select>
+                <div class="invalid-feedback">
+                    Please select a hobby
+                </div>
+            </div>
+            <button class="btn btn-danger btn-block" type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var form = document.getElementById('needs-validation');
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    </script>
+</body>
+</html>

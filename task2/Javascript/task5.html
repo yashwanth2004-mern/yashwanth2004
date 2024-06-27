@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <style>
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .form-group label {
+            width: 80px;
+        }
+        .form-group input, .form-group textarea {
+            margin-right: 10px;
+        }
+        .error {
+            color: red;
+            margin-left: 10px;
+        }
+        input.error, textarea.error {
+            border: 2px solid red;
+        }
+    </style>
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            
+            let isValid = true;
+
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const website = document.getElementById('website');
+            const message = document.getElementById('message');
+
+            const nameError = document.getElementById('nameError');
+            const emailError = document.getElementById('emailError');
+            const websiteError = document.getElementById('websiteError');
+            const messageError = document.getElementById('messageError');
+
+
+            nameError.innerText = '';
+            emailError.innerText = '';
+            websiteError.innerText = '';
+            messageError.innerText = '';
+
+
+            name.classList.remove('error');
+            email.classList.remove('error');
+            website.classList.remove('error');
+            message.classList.remove('error');
+
+
+            if (name.value.trim() === '') {
+                nameError.innerText = 'This field is required';
+                name.classList.add('error');
+                isValid = false;
+            }
+
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (email.value.trim() === '') {
+                emailError.innerText = 'A valid email address is required';
+                email.classList.add('error');
+                isValid = false;
+            } else if (!emailPattern.test(email.value.trim())) {
+                emailError.innerText = 'A valid email address is required';
+                email.classList.add('error');
+                isValid = false;
+            }
+
+
+            const urlPattern = /^(https?:\/\/)?([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,6})([\/\w .-]*)*\/?$/;
+            if (website.value.trim() === '') {
+                websiteError.innerText = 'A valid URL is required';
+                website.classList.add('error');
+                isValid = false;
+            } else if (!urlPattern.test(website.value.trim())) {
+                websiteError.innerText = 'A valid URL is required';
+                website.classList.add('error');
+                isValid = false;
+            }
+
+
+            if (message.value.trim() === '') {
+                messageError.innerText = 'This field is required';
+                message.classList.add('error');
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert('Form submitted successfully!');
+            }
+        }
+    </script>
+</head>
+<body>
+    <form id="contactForm" onsubmit="validateForm(event)">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <span class="error" id="nameError"></span>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <span class="error" id="emailError"></span>
+        </div>
+        <div class="form-group">
+            <label for="website">Website:</label>
+            <input type="text" id="website" name="website">
+            <span class="error" id="websiteError"></span>
+        </div>
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea>
+            <span class="error" id="messageError"></span>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

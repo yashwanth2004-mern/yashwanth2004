@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Example</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        .form-group {
+            position: relative;
+        }
+        .form-group input {
+            padding-left: 40px;
+        }
+        .form-group i {
+            position: absolute;
+            left: 5px;
+            top: 67%;
+            transform: translateY(-60%);
+            font-size: 20px;
+            color: #dc3545;
+        }
+        /* .form-group .invalid-feedback {
+            display: none;
+            color: #dc3545;
+        } */
+ 
+        .form-group .icon {
+            position: absolute;
+            right: 10px;
+            top: 60%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <form id="myForm" onsubmit="return validateForm()">
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <i class="fas fa-user"></i>
+            <input type="text" class="form-control" id="firstName" placeholder="First Name">
+            <div class="invalid-feedback">
+                Please supply your first name
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <i class="fas fa-user"></i>
+            <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+            <div class="invalid-feedback">
+                Please supply your last name
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">E-Mail</label>
+            <i class="fas fa-envelope"></i>
+            <input type="email" class="form-control" id="email" placeholder="E-Mail Address">
+            <div class="invalid-feedback">
+                Please supply your email address
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <i class="fas fa-phone"></i>
+            <input type="tel" class="form-control" id="phone" placeholder="(845)555-1212">
+            <div class="invalid-feedback">
+                Please supply your phone number
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <i class="fas fa-home"></i>
+            <input type="text" class="form-control" id="address" placeholder="Address">
+            <div class="invalid-feedback">
+                Please supply your street address
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="city">City</label>
+            <i class="fas fa-city"></i>
+            <input type="text" class="form-control" id="city" placeholder="City">
+            <div class="invalid-feedback">
+                Please supply your city
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    function validateForm() {
+        let isValid = true;
+        const fields = ['firstName', 'lastName', 'email', 'phone', 'address', 'city'];
+
+        fields.forEach(function(field) {
+            const input = document.getElementById(field);
+            if (input.value === '') {
+                input.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                input.classList.remove('is-invalid');
+            }
+        });
+
+        return isValid;
+    }
+</script>
+</body>
+</html>

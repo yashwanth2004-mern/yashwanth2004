@@ -1,0 +1,24 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.input-group .fa-exclamation-circle {
+    color: red;
+    display: none;
+}
+
+.was-validated .form-control:invalid ~ .input-group-append .fa-exclamation-circle {
+    display: inline;
+}
+
+.was-validated .form-control:valid ~ .input-group-append .fa-exclamation-circle {
+    display: none;
+}
+
+.invalid-feedback {
+    display: none;
+}
+
+.was-validated .form-control:invalid ~ .invalid-feedback {
+    display: block;
+}

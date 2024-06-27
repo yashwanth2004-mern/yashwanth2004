@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Table</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .pricing-header {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        .pricing-header h1 {
+            margin-bottom: 1rem;
+        }
+        .card-deck .card {
+            min-width: 220px;
+            margin-bottom: 1rem;
+        }
+        .footer {
+            padding: 2rem 1rem;
+            background-color: #f8f9fa;
+            text-align: left;
+            margin-top: 2rem;
+        }
+        .footer .row > div {
+            margin-bottom: 1rem;
+        }
+        .footer h5 {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer ul li {
+            margin-bottom: 0.5rem;
+        }
+        .footer ul li a {
+            text-decoration: none;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Company name</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Enterprise</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Support</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-primary" href="#">Sign up</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <header class="pricing-header">
+            <h1>Pricing</h1>
+            <p class="lead">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It's built with default Bootstrap components and utilities with little customization.</p>
+        </header>
+        <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Free</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>10 users included</li>
+                        <li>2 GB of storage</li>
+                        <li>Email support</li>
+                        <li>Help center access</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
+                </div>
+            </div>
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Pro</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>20 users included</li>
+                        <li>10 GB of storage</li>
+                        <li>Priority email support</li>
+                        <li>Help center access</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
+                </div>
+            </div>
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Enterprise</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$29 <small class="text-muted">/ mo</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>30 users included</li>
+                        <li>15 GB of storage</li>
+                        <li>Phone and email support</li>
+                        <li>Help center access</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-primary">Contact us</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col-md-4">
+                    <small class="d-block mb-3 text-muted">© 2017</small>
+                </div> -->
+                <div class="col-md-4">
+                    <h5>Features</h5>
+                    <ul>
+                        <li><a href="#">Cool stuff</a></li>
+                        <li><a href="#">Random feature</a></li>
+                        <li><a href="#">Team feature</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Resources</h5>
+                    <ul>
+                        <li><a href="#">Resource</a></li>
+                        <li><a href="#">Resource name</a></li>
+                        <li><a href="#">Another resource</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>About</h5>
+                    <ul>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Locations</a></li>
+                        <li><a href="#">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

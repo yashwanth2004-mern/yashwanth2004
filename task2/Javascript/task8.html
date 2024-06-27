@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            margin: 0; /* Reset default margin to ensure full coverage */
+        }
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 50px auto;
+            /* Remove background-color and border */
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            font-weight: bold; /* Make table cell text bold */
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="text"], input[type="password"], input[type="email"], input[type="number"], textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin: 0px 0;
+            box-sizing: border-box;
+            display: block;
+        }
+        textarea {
+            height: 60px;
+        }
+        .container {
+            width: 100%;
+            margin: auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold; /* Make header text bold */
+        }
+        .button {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .error {
+            color: red;
+            margin-left: 10px;
+            display: none;
+            font-weight: bold; /* Make error messages bold */
+        }
+    </style>
+    
+    
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h2>Registration Form</h2>
+    </div>
+    <form id="registrationForm">
+        <table>
+            <tr>
+                <td>First Name</td>
+                <td>
+                    <input type="text" id="firstname" name="firstname">
+                    <span class="error" id="firstnameError">POOR</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td>
+                    <input type="text" id="lastname" name="lastname">
+                    <span class="error" id="lastnameError">POOR</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="email" id="email" name="email">
+                    <span class="error" id="emailError">POOR</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>
+                    <input type="password" id="password" name="password">
+                    <span class="error" id="passwordError">POOR</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Re-enter Password</td>
+                <td>
+                    <input type="password" id="repassword" name="repassword">
+                    <span class="error" id="repasswordError">POOR OR MISMATCH</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" id="male" name="gender" value="male"> Male
+                    <input type="radio" id="female" name="gender" value="female"> Female
+                    <span class="error" id="genderError">POOR</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td>
+                    <input type="number" id="age" name="age">
+                    <span class="error" id="ageError">POOR</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Phone Number</td>
+                <td>
+                    <input type="text" id="phone" name="phone">
+                    <span class="error" id="phoneError">POOR</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>
+                    <textarea id="address" name="address"></textarea>
+                    <span class="error" id="addressError">POOR</span>
+                </td>
+            </tr>
+            <tr>
+                <td>State</td>
+                <td>
+                    <input type="text" id="state" name="state">
+                    <span class="error" id="stateError">POOR</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td>
+                    <select id="country" name="country">
+                        <option value="">Choose your country</option>
+                        <option value="India">India</option>
+                        <option value="USA">USA</option>
+                        <option value="UK">UK</option>
+                    </select>
+                    <span class="error" id="countryError">POOR</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Languages known</td>
+                <td>
+                    <input type="checkbox" id="english" name="languages" value="english"> English
+                    <input type="checkbox" id="kannada" name="languages" value="kannada"> Kannada
+                    <input type="checkbox" id="hindi" name="languages" value="hindi"> Hindi
+                    <input type="checkbox" id="telugu" name="languages" value="telugu"> Telugu
+                    <span class="error" id="languagesError">POOR</span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" id="declaration" name="declaration"> I hereby declare all the given details are true
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <a href="https://ethnus.com">Log in to Ethnus website</a>
+                </td>
+            </tr>
+        </table>
+        <div class="button">
+            <button type="button" class="btn btn-danger" onclick="validateForm()"> Register </button>
+        </div>
+    </form>
+</div>
+
+<script>
+    function validateForm() {
+        let isValid = true;
+
+        // Validate First Name
+        let firstname = document.getElementById('firstname').value;
+        if (firstname === "") {
+            document.getElementById('firstnameError').style.display = 'inline';
+            isValid = false;
+        } else {
+            document.getElementById('firstnameError').style.display = 'none';
+        }
+
+        // Validate Last Name
+        let lastname = document.getElementById('lastname').value;
+        if (lastname === "") {
+            document.getElementById('lastnameError').style.display = 'inline';
+            isValid = false;
+        } else {
+            document.getElementById('lastnameError').style.display = 'none';
+        }
+
+        // Validate Email
+        let email = document.getElementById('email').value;
+        let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailPattern.test(email)) {
+            document.getElementById('emailError').style.display = 'inline';
+            isValid = false;
+        } else {
+            document.getElementById('emailError').style.display = 'none';
+        }
+
+        // Validate Password
+        let password = document.getElementById('password').value;
+        if (password.length < 6) {
+            document.getElementById('passwordError').style.display = 'inline';
+            isValid = false;
+        } else {
+            document.getElementById('passwordError').style.display = 'none';
+        }
+
+        // Validate Re-enter Password
+        let repassword = document.getElementById('repassword').value;
+        if (repassword !== password) {
+            document.getElementById('repasswordError').style.display = 'inline';
+            isValid = false;
+        } else {
+            document.getElementById('repasswordError').style.display = 'none';
+        }
+
+        // Validate Gender
+        let genderMale = document.getElementById('male').checked;
+        let genderFemale = document.getElementById('female').checked;
+        if (!genderMale && !genderFemale) {
+            document.getElementById('genderError').style.display = 'inline';
+            isValid = false;
+        } else {
+            document.getElementById('genderError').style.display = 'none';
+        }
+
+        // Validate Age
+        let age = document.getElementById('age').value;
+        if (age === "" || age <= 0) {
+            document.getElementById('ageError').style.display = 'inline';
+            isValid = false;
+        } else {
+            document.getElementById('ageError').style.display = 'none';
+        }
+
+        // Validate Phone Number
+        let phone = document.getElementById('phone').value;
+        let phonePattern = /^[0-9]{10}$/;
+        if (!phonePattern.test(phone)) {
+            document.getElementById('phoneError').style.display = 'inline';
+            isValid = false;
+        } else {
+            document.getElementById('phoneError').style.display = 'none';
+        }
+
+        // Validate Address
+        let address = document.getElementById('address').value;
+        if (address === "") {
+            document.getElementById('addressError').style.display = 'inline';
+            isValid = false;
+        } else {
+            document.getElementById('addressError').style.display = 'none';
+        }
+
+        // Validate State
+        let state = document.getElementById('state').value;
+        if (state === "") {
+            document.getElementById('stateError').style.display = 'inline';
+            isValid = false;
+        } else {
+            document.getElementById('stateError').style.display = 'none';
+        }
+
+        // Validate Country
+        let country = document.getElementById('country').value;
+        if (country === "") {
+            document.getElementById('countryError').style.display = 'inline';
+            isValid = false;
+        } else {
+            document.getElementById('countryError').style.display = 'none';
+        }
+
+        // Validate Languages known
+        let english = document.getElementById('english').checked;
+        let kannada = document.getElementById('kannada').checked;
+        let hindi = document.getElementById('hindi').checked;
+        let telugu = document.getElementById('telugu').checked;
+        if (!english && !kannada && !hindi && !telugu) {
+            document.getElementById('languagesError').style.display = 'inline';
+            isValid = false;
+        } else {
+            document.getElementById('languagesError').style.display = 'none';
+        }
+
+        // Validate Declaration
+        let declaration = document.getElementById('declaration').checked;
+        if (!declaration) {
+            isValid = false;
+        }
+
+        if (isValid) {
+            alert("Form submitted successfully!");
+        } else {
+            alert("Please fill out all fields correctly.");
+        }
+    }
+</script>
+
+</body>
+</html>
